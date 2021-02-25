@@ -1,0 +1,31 @@
+{
+	"name": "IoT Edge Dev",
+	//"image": "azureiotgbb/iot-edge-dev-container:latest",
+	"dockerFile": "Dockerfile",
+	"postCreateCommand": "",
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": { 
+		"terminal.integrated.shell.linux": "/bin/bash"
+	},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"ms-vscode-remote.remote-containers",
+		"vsciot-vscode.azure-iot-tools",
+		"summer.azure-event-hub-explorer",
+		"ms-azuretools.vscode-azurefunctions",
+		"ms-dotnettools.csharp",
+		"ms-azuretools.vscode-docker",
+		"bierner.markdown-preview-github-styles",
+		"ms-azuretools.vscode-azureterraform",
+		"ms-kubernetes-tools.vscode-kubernetes-tools",
+		"mauve.terraform",
+		"ms-vscode.azurecli"
+	],
+
+	"mounts": [
+		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.azure,target=/root/.azure,type=bind",
+	]
+}
